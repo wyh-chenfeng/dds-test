@@ -1,4 +1,4 @@
-# dds
+# dds-test
  以JNDI的方式实现动态数据源 -- 实例
  
 # Tomcat7.0配置JNDI数多据源
