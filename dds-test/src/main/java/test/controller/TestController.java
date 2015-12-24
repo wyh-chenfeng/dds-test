@@ -65,29 +65,31 @@ public class TestController {
 		syndrome.setSyndromeElementStart("B"); 
 		syndrome.setSymptomCategory("symptomCategory");
 		
-		Timer timer = new Timer();
-		timer.schedule(new TimerTask() {
-			
-			@Override
-			public void run() {
-				new Thread(){
-					public void run() {
-						System.out.println("============= run ===========");
-						syndromeService.test(syndrome);
-						syndromeService.findAll();
-						syndromeService.findAll();
-						syndromeService.test(syndrome);
-						syndromeService.findAll();
-						syndromeService.findAll();
-						syndromeService.test(syndrome);
-						syndromeService.findAll();
-						syndromeService.test(syndrome);
-						syndromeService.findAll();
-						syndromeService.findAll();
-					};
-				}.start();
-			}
-		}, new Date(), 1000);
+		syndromeService.test(syndrome);
+		
+//		Timer timer = new Timer();
+//		timer.schedule(new TimerTask() {
+//			
+//			@Override
+//			public void run() {
+//				new Thread(){
+//					public void run() {
+//						System.out.println("============= run ===========");
+//						syndromeService.test(syndrome);
+//						syndromeService.findAll();
+//						syndromeService.findAll();
+//						syndromeService.test(syndrome);
+//						syndromeService.findAll();
+//						syndromeService.findAll();
+//						syndromeService.test(syndrome);
+//						syndromeService.findAll();
+//						syndromeService.test(syndrome);
+//						syndromeService.findAll();
+//						syndromeService.findAll();
+//					};
+//				}.start();
+//			}
+//		}, new Date(), 1000);
 		
 		return "test";
 	} 

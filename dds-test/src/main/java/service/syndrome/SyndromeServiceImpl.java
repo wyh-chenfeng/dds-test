@@ -13,6 +13,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import cn.smart.dds.DataSource;
 import repository.mybatis.SyndromeMapper;
 import service.CrudServiceImpl;
 
@@ -111,6 +112,7 @@ public class SyndromeServiceImpl extends CrudServiceImpl<Syndrome, Long, Syndrom
 	
 	@Override
 	@Transactional
+	@DataSource(DataSource.MASTER)
 	public void test(Syndrome syndrome) {
 		
 //		this.delete(38L);

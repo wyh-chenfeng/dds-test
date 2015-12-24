@@ -56,6 +56,5 @@ public interface SyndromeService extends CrudService<Syndrome, Long> {
     @DataSource(DataSource.SLAVE)
     Syndrome update(SyndromeCreateInput syndromeUpdateInput);
 
-    @DataSource(DataSource.MASTER)
 	void test(Syndrome syndrome);
 }
