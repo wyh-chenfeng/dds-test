@@ -10,6 +10,7 @@ import javax.annotation.Resource;
 import model.mybatis.Syndrome;
 
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +20,7 @@ import service.CrudServiceImpl;
 
 @Service
 @Transactional(readOnly = true)
-public class SyndromeServiceImpl extends CrudServiceImpl<Syndrome, Long, SyndromeMapper> implements SyndromeService {
+public class SyndromeServiceImpl extends CrudServiceImpl<Syndrome, Long, SyndromeMapper> implements InitializingBean, SyndromeService {
     @Resource
     @Override
     public void setRepository(SyndromeMapper syndromeMapper) {
@@ -118,6 +119,11 @@ public class SyndromeServiceImpl extends CrudServiceImpl<Syndrome, Long, Syndrom
 //		this.delete(38L);
 		
 		repository.insertSelective(syndrome);
+		
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
 		
 	}
 
